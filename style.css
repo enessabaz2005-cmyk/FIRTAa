@@ -224,3 +224,16 @@ body.second-page .fade {
   display: block; /* alt boşluğu kaldırır */
   border-radius: 12px;
 }
+/* Resimler telefon ekranında bozulmasın */
+.slide img {
+  width: 100%;       /* Ekranı kapla */
+  height: auto;      /* Orantıyı bozmadan ayarla */
+  object-fit: cover; /* Taşma ve bozulmayı önler */
+}
+
+/* Mobil ekran yüksekliği sınırı */
+@media (max-width: 768px) {
+  .slide img {
+    max-height: 40vh; /* Telefonlarda çok büyük olmasın */
+  }
+}
