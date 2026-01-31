@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+  <title>DIKKAT</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.10.1/tsparticles.bundle.min.js"></script>
+  <style>
+    /* Tam sayfa arka plan ve particles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: #b53535; /* Particles arka planı */
+    }
+
+    #tsparticles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Ortadaki içerik ve foto kart */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 1; /* particles’in üstünde */
+    }
+
+    /* Fotoğraf kart */
+    .photo-card {
+      width: 300px;
+      height: 400px;
+      margin: 0 auto 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    h1 {
+      margin: 20px 0 10px 0;
+      font-size: 2em;
+    }
+
+    p {
+      margin: 0 0 20px 0;
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    .my-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .my-button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 400px) {
+      .photo-card {
+        width: 90%;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles -->
+  <div id="tsparticles"></div>
+
+  <!-- Ortadaki içerik ve foto kart -->
+  <div class="content">
+    <div class="photo-card">
+      <img src="Screenshot 2026-01-31 at 23.05.26.png" alt="Fotoğraf">
+    </div>
+    <h1>Benimle Evlenir Misin?</h1>
+    <p style="color: rgb(246, 255, 0);">Maralımız İçin</p>
+    
+  </div>
+
+  <!-- Particles JS -->
+  <script>
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 150, line_linked: { opacity: 0.5 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+</body>
+</html>

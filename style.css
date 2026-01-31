@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f5f6f8; /* Açık arka plan */
+  color: #333;
+  overflow: hidden;
+}
+
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.content h1 {
+  font-size: clamp(22px, 5vw, 36px);
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.my-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #007bff; /* Mavi ton */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.my-button:hover {
+  background-color: #0056b3; /* Hover rengi koyulaşır */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+.my-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+
+
+/* Sadece ikinci sayfa için */
+body.second-page {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body.second-page .slider-container {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+body.second-page .slide {
+  display: none;
+  position: relative;
+}
+
+body.second-page .slide img {
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 12px;
+}
+
+body.second-page .text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 20px;
+  background: rgba(0,0,0,0.4);
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+/* Fade Animasyonu */
+body.second-page .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* Slider Noktaları */
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+.page-title {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.page-subtitle {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+.my-button2 {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #28a745; /* Yeşil ton */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.photo-box {
+  width: 250px;
+  height: 250px;
+  margin: 20px auto; /* ortalar */
+  border-radius: 15px;
+  overflow: hidden; /* taşanı keser */
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* kırpmayı düzgün yapar */
+
+}
+/* Particles arka plan */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;   /* EN ARKADA */
+}
+
+/* İçerik (fotoğraf, yazı, buton) */
+.content {
+  position: relative;
+  z-index: 2;   /* ÜSTTE */
+  text-align: center;
+  color: white;
+}
+
+/* Fotoğraf alanı */
+.photo-box {
+  width: 250px;   /* doğru yazım */
+  height: 250px;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000; /* test için */
+}
+
+.photo-box img {
+  width: 100%;    /* container içine tam oturur */
+  height: 100%;   /* container yüksekliğine uyar */
+  object-fit: cover; /* kırpma düzgün olur */
+}
+.slide img {
+  width: 100%;  /* container’a sığar */
+  height: auto; /* orantılı kalır */
+  display: block; /* alt boşluğu kaldırır */
+  border-radius: 12px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <title>DIKKAT</title>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.10.1/tsparticles.bundle.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f1f1;
+    }
+
+    /* Arka plan particles */
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* İçerik */
+    .content {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgb(22, 21, 21);
+      text-align: center;
+    }
+
+    /* Fotoğraf alanı */
+    .photo-box {
+      width: 250px;
+      height: 250px;
+      margin: 20px 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+        background-color: #240bb4;
+        color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Particles arka plan -->
+  <div id="tsparticles"></div>
+
+  <!-- İçerik -->
+  <div class="content">
+    <h1>Ballıma</h1>
+
+    <div class="photo-box">
+      <img src="b.png" alt="Fotoğraf">
+    </div>
+
+     <p>👇🏼Cesaretin Varsa Bas👇🏼</p>
+
+    <button class="selam" onclick="location.href='second.html'" style="background-color: #240bb4;">
+      Sakın Basma !!!!!
+    </button>
+  </div>
+
+  <script>
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 }
+      }
+    });
+  </script>
+
+</body>
+</html>
